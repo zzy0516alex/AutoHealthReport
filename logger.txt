@@ -1,0 +1,3 @@
+successfully reported number:0
+already reported number:6
+undetected error number:1
