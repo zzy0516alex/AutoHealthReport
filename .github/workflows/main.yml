@@ -26,7 +26,8 @@ jobs:
       - name: Setup Java JDK
         uses: actions/setup-java@v2.5.0
         with:
-          java-version: 13.0
+          java-version: '13'
+          distribution: 'adopt'
       - name: start task
         run: java -jar SeleniumTest.jar
       
