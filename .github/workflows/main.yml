@@ -22,7 +22,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
+          
+      - name: Setup Java JDK
+        uses: actions/setup-java@v2.5.0
+        with:
+          java-version: '13'
+          distribution: 'adopt'
+      - name: start task
+        run: java -jar SeleniumTest.jar
+        
       - name: 'Send mail'
         uses: dawidd6/action-send-mail@master
         with:
@@ -33,16 +41,8 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: health report log
-          body: file://用户信息.txt
+          body: file://logger.txt
           to: 1552270177@qq.com
           from: GitHub Actions
           content_type: text/html
-          
-      - name: Setup Java JDK
-        uses: actions/setup-java@v2.5.0
-        with:
-          java-version: '13'
-          distribution: 'adopt'
-      - name: start task
-        run: java -jar SeleniumTest.jar
       
