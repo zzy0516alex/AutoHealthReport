@@ -4,7 +4,6 @@ name: Auto Health Report
 
 # Controls when the workflow will run
 on:
-  push:
   schedule:
   # 定时任务，在每天的7点(beijin time)触发
     - cron: '0 23 * * *'
