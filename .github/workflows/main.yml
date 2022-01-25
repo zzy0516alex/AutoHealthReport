@@ -6,7 +6,7 @@ name: Auto Health Report
 on:
   schedule:
   # 定时任务，在每天的8点(beijin time)触发
-    - cron: '0 1 * * *'
+    - cron: '14 0 * * *'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
