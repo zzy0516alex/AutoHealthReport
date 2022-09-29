@@ -31,11 +31,6 @@ jobs:
       - name: start task
         run: java -jar SeleniumTest.jar ${{ secrets.KEY }}
         
-      - name: Compress screen cuts
-        uses: vimtor/action-zip@v1
-        with:
-          files: file://screencuts/
-          dest: result.zip
       - name: upload result
         uses: actions/upload-artifact@v1
         with:
